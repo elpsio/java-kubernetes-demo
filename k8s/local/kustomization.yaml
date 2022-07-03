@@ -5,5 +5,5 @@ resources:
   - backend-demo-service.yaml
   - namespace-local.yaml
 images:
-  - name: backend-demo
-    newTag: v2
+  - name: elpit/backend-demo
+    newTag: v3

@@ -36,6 +36,14 @@ images:
     newTag: v2
 ````
 
+Additional info:
+
+v1 - Prints ``Hello from Docker v1!``
+
+v2 - Prints ``Hello from Docker v2!``
+
+v2 - Prints ``Hello from Docker v3!`` and all system properties (project will use environment variables soon).
+
 ___
 
 ## [Optional] Use your own docker hub repository and own images:
@@ -71,29 +79,16 @@ mvn clean package
 6. Build a docker image with version ``v2`` from the Dockerfile:
 
 ```
-docker build --tag=backend-demo:v2 .
+docker build --tag=elpit/backend-demo:v3 .
 ```
 
-7. Verify images are having different id's by executing ``docker image ls``. If they do have the same id's start from
-   step 1.
-
-
-8. Tag your created images, use `docker image ls` to copy the image id's. Replace `{REPOSITORY NAME}` with the
-   repository name created in step 1.
-
-```
-docker tag {image id} {REPOSITORY NAME}/backend-demo:v1
-docker tag {image id} {REPOSITORY NAME}/backend-demo:v2
-```
-
-9. Push the tagged images to your repository:
-
+7. Push the tagged images to your repository:
 ```
 docker push {REPOSITORY NAME}/backend-demo:v1
 docker push {REPOSITORY NAME}/backend-demo:v2
 ```
 
-10. Replace the repository name `elpit` from the image declaration in
+8. Replace the repository name `elpit` from the image declaration in
     the [local](./k8s/local/backend-demo-deployment.yaml)
     and [integ](./k8s/integ/backend-demo-deployment.yaml) files:
 
