@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-demo-deployment
+  labels:
+    app: backend-demo
+  namespace: local
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend-demo
+  template:
+    metadata:
+      labels:
+        app: backend-demo
+    spec:
+      containers:
+        - name: backend-demo
+          image: elpit/backend-demo:v1
+          ports:
+            - containerPort: 80
