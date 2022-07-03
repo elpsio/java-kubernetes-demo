@@ -20,4 +20,3 @@ spec:
           image: elpit/backend-demo:v1
           ports:
             - containerPort: 8080
-          imagePullPolicy: Always

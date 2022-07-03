@@ -8,7 +8,7 @@ public class DockerMessageController {
 
     @GetMapping("/")
     public String getMessage() {
-        return "Hello from Docker v2!";
+        return "Hello from Docker v1";
     }
 
 }
